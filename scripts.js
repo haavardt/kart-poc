@@ -33,10 +33,10 @@
 
 
     newMarkerGroup = new L.LayerGroup();
-    map.on('click', addMarker);
+    mymap.on('click', addMarker);
     
     function addMarker(e){
-        var newMarker = new L.marker(e.latlng).addTo(map);
+        var newMarker = new L.marker(e.latlng).addTo(mymap);
     }
 
     /*var popup = L.popup();
