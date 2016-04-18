@@ -32,7 +32,14 @@
     }).addTo(mymap);
 
 
-    var popup = L.popup();
+    newMarkerGroup = new L.LayerGroup();
+    map.on('click', addMarker);
+    
+    function addMarker(e){
+        var newMarker = new L.marker(e.latlng).addTo(map);
+    }
+
+    /*var popup = L.popup();
 
     function onMapClick(e) {
       popup
@@ -42,6 +49,7 @@
     }
 
     mymap.on('click', onMapClick);
+    */
 
 /*
 $("#adresse").on("keyup", function () {
