@@ -32,11 +32,18 @@
     }).addTo(mymap);
 
 
-    newMarkerGroup = new L.LayerGroup();
+    
     mymap.on('click', addMarker);
     
+    var marker;
+    
     function addMarker(e){
-        var newMarker = new L.marker(e.latlng).addTo(mymap);
+      if (marker) {
+        mymap.removeLayer(marker);
+      }
+      marker = new L.marker(e.latlng).addTo(mymap);
+      console.log(e.latlng);
+      marker.bindPopup("<b>Klikk!</b><br />Breddegrad: " + e.latlng.lat + "<br />Lengdegrad: " + e.latlng.lng).openPopup();
     }
 
     /*var popup = L.popup();
